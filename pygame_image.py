@@ -21,6 +21,8 @@ def main():
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
+        
+        kk_rct.move_ip((-1,0))#演習１
 
         key_lst = pg.key.get_pressed()#練習１０－３
         if key_lst[pg.K_UP]:
@@ -30,12 +32,12 @@ def main():
         if key_lst[pg.K_LEFT]:
             kk_rct.move_ip((-1, 0))
         if key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip((+1, 0))
+            kk_rct.move_ip((+2, 0))
 
 
         x = tmr%3200 #練習５
         screen.blit(bg_img, [-x, 0])#練習２
-        screen.blit(bg_img2 [-x+1600,0])#練習７
+        screen.blit(bg_img2, [-x+1600,0])#練習７
         screen.blit(bg_img, [-x + 3200 ,0])#練習９
         screen.blit(kk_image,kk_rct)#練習４>練習１０－５
         pg.display.update()
