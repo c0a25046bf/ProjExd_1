@@ -10,19 +10,22 @@ def main():
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
     bg_img = pg.image.load("fig/pg_bg.jpg")#練習１
-    kk_image = pg.image.load("fig/3.png")#練習３S
+    bg_img2 = pg.transform.flip(bg_img,True,False)#練習８
+    kk_image = pg.image.load("fig/3.png")#練習３
     kk_image = pg.transform.flip(kk_image,True,False)
     tmr = 0
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        x = tmr #練習５
-        screen.blit(bg_img, [x, 0])#練習２
+        x = tmr%3200 #練習５
+        screen.blit(bg_img, [-x, 0])#練習２
+        screen.blit(bg_img2, [-x+1600,0])#練習７
+        screen.blit(bg_img, [-x + 3200 ,0])#練習９
         screen.blit(kk_image,[300,200])#練習４
         pg.display.update()
-        tmr -= 1        
-        clock.tick(200)
+        tmr += 1        
+        clock.tick(200)#練習６
 
 
 if __name__ == "__main__":
