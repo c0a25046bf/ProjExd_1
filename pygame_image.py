@@ -24,16 +24,19 @@ def main():
         
         kk_rct.move_ip((-1,0))#演習１
 
-        key_lst = pg.key.get_pressed()#練習１０－３
-        if key_lst[pg.K_UP]:
-            kk_rct.move_ip((0, -1))#練習１０ー４
-        if key_lst[pg.K_DOWN]:
-            kk_rct.move_ip((0, +1))
-        if key_lst[pg.K_LEFT]:
-            kk_rct.move_ip((-1, 0))
-        if key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip((+2, 0))
+        kk=[0,0]
 
+        key_lst = pg.key.get_pressed()#練習１０－３>#演習２
+        if key_lst[pg.K_UP]:
+            kk[1] = -1
+        if key_lst[pg.K_DOWN]:
+            kk[1] = +1
+        if key_lst[pg.K_LEFT]:
+            kk[0] = -1
+        if key_lst[pg.K_RIGHT]:
+            kk[0] = +2
+        
+        kk_rct.move_ip(kk)
 
         x = tmr%3200 #練習５
         screen.blit(bg_img, [-x, 0])#練習２
