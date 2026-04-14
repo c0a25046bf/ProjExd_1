@@ -35,7 +35,7 @@ def main():
 
         x = tmr%3200 #練習５
         screen.blit(bg_img, [-x, 0])#練習２
-        screen.blit(bg_img2, [-x+1600,0])#練習７
+        screen.blit(bg_img2 [-x+1600,0])#練習７
         screen.blit(bg_img, [-x + 3200 ,0])#練習９
         screen.blit(kk_image,kk_rct)#練習４>練習１０－５
         pg.display.update()
